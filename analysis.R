@@ -62,3 +62,12 @@ dev.off()
 
 cat("Histogram saved: popular_interest_histogram.png\n")
 
+# STATISTICAL ANALYSIS: Kruskal-Wallis Test
+cat("\n=== STATISTICAL TEST: KRUSKAL-WALLIS H-TEST ===\n")
+
+kruskal_test <- kruskal.test(popular_interest ~ evidence_score, data = data)
+
+cat("Kruskal-Wallis H-statistic:", round(kruskal_test$statistic, 4), "\n")
+cat("P-value:", round(kruskal_test$p.value, 6), "\n")
+cat("Degrees of freedom:", kruskal_test$parameter, "\n\n")
+

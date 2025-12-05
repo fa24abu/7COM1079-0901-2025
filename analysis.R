@@ -71,3 +71,12 @@ cat("Kruskal-Wallis H-statistic:", round(kruskal_test$statistic, 4), "\n")
 cat("P-value:", round(kruskal_test$p.value, 6), "\n")
 cat("Degrees of freedom:", kruskal_test$parameter, "\n\n")
 
+if (kruskal_test$p.value < 0.05) {
+  cat("Decision: REJECT the null hypothesis (p =", round(kruskal_test$p.value, 4), "< 0.05)\n")
+  cat("Conclusion: There IS a significant difference in popular interest\n")
+  cat("            across different evidence score levels.\n")
+} else {
+  cat("Decision: FAIL TO REJECT the null hypothesis (p >= 0.05)\n")
+  cat("Conclusion: There is NO significant difference in popular interest\n")
+  cat("            across different evidence score levels.\n")
+}
